@@ -5,7 +5,7 @@
 ### Installion Through VS Code
 
 ```cmd
-git clone https://github.com/tomsabu444/Vitality.git
+git clone https://github.com/Jishnumo/Vitality.git
 cd Vitality
 npm install
 npm run dev
