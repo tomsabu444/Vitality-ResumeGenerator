@@ -7,53 +7,49 @@ import { IoCloseOutline } from "react-icons/io5";
 function NavBar() {
   const [click, setClick] = useState(false);
 
-    // Define navigation items
-    const navItems = [
-      { path: "/", name: "Home" },
-      
-
-    ];
+  // Define navigation items
+  const navItems = [{ path: "/", name: "Home" }];
 
   const handleClick = () => setClick(!click);
   return (
     <Container>
-    <nav className="navbar">
-      <div className="nav-container">
-        <NavLink to="/" className="nav-logo">
-          <span>Vitality</span>
-        </NavLink>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink to="/" className="nav-logo">
+            <span>Vitality</span>
+          </NavLink>
 
-        <div className="nav-animation">
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {navItems.map((item, index) => (
-              <li className="nav-item" key={index}>
-                <NavLink
-                  to={item.path}
-                  activeclassname="active"
-                  className="nav-links"
-                  onClick={handleClick}
-                >
-                  {item.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+          <div className="nav-animation">
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
+              {navItems.map((item, index) => (
+                <li className="nav-item" key={index}>
+                  <NavLink
+                    to={item.path}
+                    activeclassname="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="nav-icon" onClick={handleClick}>
+            {click ? (
+              <span className="icon icon-s">
+                <IoCloseOutline />
+              </span>
+            ) : (
+              <span className="icon icon-s">
+                <RxHamburgerMenu />
+              </span>
+            )}
+          </div>
         </div>
-        <div className="nav-icon" onClick={handleClick}>
-          {click ? (
-            <span className="icon icon-s">
-              <IoCloseOutline />
-            </span>
-          ) : (
-            <span className="icon icon-s">
-              <RxHamburgerMenu />
-            </span>
-          )}
-        </div>
-      </div>
-    </nav>
-  </Container>
-);
+      </nav>
+    </Container>
+  );
 }
 
 export default NavBar;
