@@ -10,9 +10,7 @@ function NavBar() {
     // Define navigation items
     const navItems = [
       { path: "/", name: "Home" },
-      { path: "/about", name: "About" },
-      { path: "/blog", name: "Blog" },
-      { path: "/contact", name: "Contact Us" }
+
     ];
 
   const handleClick = () => setClick(!click);
@@ -44,7 +42,7 @@ function NavBar() {
         <div className="nav-icon" onClick={handleClick}>
           {click ? (
             <span className="icon icon-s">
-              <IoCloseOutline />{" "}
+              <IoCloseOutline />
             </span>
           ) : (
             <span className="icon icon-s">
