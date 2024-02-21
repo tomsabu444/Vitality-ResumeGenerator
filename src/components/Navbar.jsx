@@ -13,63 +13,65 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <span>CodeBucks</span>
+            <span>Vitality</span>
           </NavLink>
 
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/blog"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/contact"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-          </ul>
+          <div className="nav-animation">
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  to="/"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  to="/about"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  About
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  to="/blog"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Blog
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  to="/contact"
+                  activeClassName="active"
+                  className="nav-links"
+                  onClick={handleClick}
+                >
+                  Contact Us
+                </NavLink>
+              </li>
+            </ul>
+          </div>
           <div className="nav-icon" onClick={handleClick}>
             {click ? (
               <span className="icon">
-                <RxHamburgerMenu className="hamburgeropen" />{" "}
+                <IoCloseOutline />{" "}
               </span>
             ) : (
               <span className="icon">
-                <IoCloseOutline />
+                <RxHamburgerMenu />
               </span>
             )}
           </div>
@@ -83,7 +85,7 @@ export default NavBar;
 
 const Container = styled.div`
   .navbar {
-    background-color: #1f5156;
+    background: #222;
     width: 100vw;
     height: 80px;
     display: flex;
@@ -93,6 +95,9 @@ const Container = styled.div`
     position: fixed;
     top: 0;
     z-index: 20;
+  }
+
+  a .logo {
   }
 
   .nav-container {
@@ -158,19 +163,16 @@ const Container = styled.div`
     transition: width 0.7s ease, background-color 0.5s ease;
   }
 
-  .nav-item:hover:after {
-    width: 100%;
-    background: #ffdd40;
-  }
-
-  .nav-item .active {
-    color: #ffdd40;
-    border: 1px solid #ffdd40;
+  .nav- .nav-item .active {
+    background: linear-gradient(45deg, #4f1919, #ff3333);
+    color: white;
+    font-weight: 600;
+    border-radius: 15px;
   }
 
   .nav-icon {
     display: none;
-    color: #f5b921;
+    color: #fff;
   }
 
   .nav-icon .icon {
@@ -191,9 +193,11 @@ const Container = styled.div`
       opacity: 1;
       transition: all 0.5s ease;
     }
-
+    .nav-animation ul {
+      background-color: #1919228f;
+    }
     .nav-menu.active {
-      background: #1f5156;
+      background: #222;
       left: 0px;
       opacity: 1;
       transition: all 0.5s ease;
@@ -224,13 +228,11 @@ const Container = styled.div`
       height: 2rem;
       cursor: pointer;
       color: #ffdd40;
-
     }
 
-    .hamburgeropen{
-       width: 20px;
-       height: 30px;
-
+    .hamburgeropen {
+      width: 20px;
+      height: 30px;
     }
   }
 `;
