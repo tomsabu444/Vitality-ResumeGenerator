@@ -193,8 +193,16 @@ const Container = styled.div`
       opacity: 1;
       transition: all 0.5s ease;
     }
+    .nav-menu {
+      color: white;
+      font-weight: 600;
+    }
     .nav-animation ul {
       background-color: #1919228f;
+    }
+    .nav-item .active {
+      background: transparent;
+      border-radius: 0;
     }
     .nav-menu.active {
       background: #222;
@@ -204,11 +212,13 @@ const Container = styled.div`
       z-index: 1;
     }
     .nav-item .active {
-      color: #ffdd40;
+      color: #ffffff;
       border: none;
     }
+    .nav-item:hover {
+      color: red;
+    }
     .nav-links {
-      padding: 1.5rem;
       width: 100%;
       display: table;
     }
