@@ -8,11 +8,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <NavBar />
-      <Footer/>
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
