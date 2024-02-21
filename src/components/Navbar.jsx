@@ -244,5 +244,8 @@ const Container = styled.div`
       width: 20px;
       height: 30px;
     }
+    .nav-item .active {
+      color: #ffdd40;
+    }
   }
 `;
