@@ -10,7 +10,6 @@ function NavBar() {
     // Define navigation items
     const navItems = [
       { path: "/", name: "Home" },
-
     ];
 
   const handleClick = () => setClick(!click);
@@ -27,9 +26,8 @@ function NavBar() {
             {navItems.map((item, index) => (
               <li className="nav-item" key={index}>
                 <NavLink
-                  exact
                   to={item.path}
-                  activeClassName="active"
+                  activeclassname="active"
                   className="nav-links"
                   onClick={handleClick}
                 >
