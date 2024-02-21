@@ -10,6 +10,8 @@ function NavBar() {
     // Define navigation items
     const navItems = [
       { path: "/", name: "Home" },
+      
+
     ];
 
   const handleClick = () => setClick(!click);
@@ -17,7 +19,7 @@ function NavBar() {
     <Container>
     <nav className="navbar">
       <div className="nav-container">
-        <NavLink exact to="/" className="nav-logo">
+        <NavLink to="/" className="nav-logo">
           <span>Vitality</span>
         </NavLink>
 
