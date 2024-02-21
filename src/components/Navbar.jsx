@@ -163,8 +163,8 @@ const Container = styled.div`
     transition: width 0.7s ease, background-color 0.5s ease;
   }
 
-  .nav- .nav-item .active {
-    background: linear-gradient(45deg, #4f1919, #ff3333);
+  .nav-item .active {
+    background: linear-gradient(45deg, #524306, #ffdd40);
     color: white;
     font-weight: 600;
     border-radius: 15px;
