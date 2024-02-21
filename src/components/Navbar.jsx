@@ -66,11 +66,11 @@ function NavBar() {
           </div>
           <div className="nav-icon" onClick={handleClick}>
             {click ? (
-              <span className="icon">
+              <span className="icon icon-s">
                 <IoCloseOutline />{" "}
               </span>
             ) : (
-              <span className="icon">
+              <span className="icon icon-s">
                 <RxHamburgerMenu />
               </span>
             )}
@@ -246,6 +246,9 @@ const Container = styled.div`
     }
     .nav-item .active {
       color: #ffdd40;
+    }
+    .icon-s {
+      font-size: 2.1rem;
     }
   }
 `;
