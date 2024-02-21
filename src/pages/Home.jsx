@@ -12,19 +12,15 @@ function Home() {
 
 export default Home;
 
-
 const Container = styled.div`
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
+  h1 {
+    padding-top: 200px;
+  }
 
-h1 {
-  padding-top: 200px;
-}
-
-.test {
-  height: 200vh;
-}
-
-
+  .test {
+    height: 200vh;
+  }
 `;
