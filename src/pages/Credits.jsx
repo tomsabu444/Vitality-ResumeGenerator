@@ -2,7 +2,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import Jishnu_image from "../images/jishnu.jpeg";
+import Tom_image from "../images/tomsabu.jpg";
+import Jot_image from "../images/justin.jpg";
 const Credits = () => {
+
   const teamMembers = [
     {
       name: "Jishnu Mohan",
@@ -10,7 +14,7 @@ const Credits = () => {
       linkedin: "https://www.linkedin.com/in/jishnu-mohan-b5837a227",
       email: "jishnumohan292@gmail.com",
       description: "Pro Designer",
-      image: "../images/jishnu.jpeg", // Add your image URL
+      image: Jishnu_image, 
     },
     {
       name: "Tom Sabu",
@@ -18,7 +22,7 @@ const Credits = () => {
       linkedin: "https://www.linkedin.com/in/tomsabu444/",
       email: "tomsabu0000@gmail.com",
       description: "Developer",
-      image: "../images/tomsabu.jpg", // Add your image URL
+      image: Tom_image, 
     },
     {
       name: "Justin James Elampurayidom",
@@ -26,8 +30,8 @@ const Credits = () => {
       linkedin: "https://www.linkedin.com/in/justin-james-elampurayidom",
       email: "justinjameselampurayidom@gmail.com",
       description: "Developer",
-      image: {../images/justin.jpg}, // Add your image URL
-    }, // Add more team members as needed
+      image: Jot_image, 
+    }, 
   ];
 
   return (
@@ -39,14 +43,14 @@ const Credits = () => {
           <Member key={index}>
             <img src={member.image} alt={member.name} />
             <div>
-              <strong>{member.name}</strong> - {member.description}
+              <strong>{member.name}</strong>    <br /> {member.description}
               <br />
-              GitHub:{" "}
+
               <a href={member.github} target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github"></i>
               </a>
-              <br />
-              LinkedIn:{" "}
+       
+
               <a
                 href={member.linkedin}
                 target="_blank"
@@ -54,8 +58,8 @@ const Credits = () => {
               >
                 <i className="fab fa-linkedin"></i>
               </a>
-              <br />
-              Email:{" "}
+        
+   
               <a href={`mailto:${member.email}`}>
                 <i className="far fa-envelope"></i>
               </a>
