@@ -1,24 +1,26 @@
 // React
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import StarsButton from "../components/StartsButton";
 
 const Landing = () => {
+  const history = useHistory();
   const [showLandingPage, setShowLandingPage] = useState(true);
 
   useEffect(() => {
     // Check if the user has already visited the site
     const hasVisited = localStorage.getItem("hasVisited");
 
-    // If the user has visited, do not show the landing page
+    // If the user has visited, do not show the landing page and redirect to the template page
     if (hasVisited) {
       setShowLandingPage(false);
+      history.push("/template"); // Replace "/template" with the actual route you want to redirect to
     } else {
       // If it's the first visit, set the flag in local storage
       localStorage.setItem("hasVisited", "true");
     }
-  }, []);
+  }, [history]);
 
   return (
     <Container>
