@@ -71,6 +71,12 @@ const Container = styled.div`
     gap: 20px;
     margin: 0 4px 12px;
   }
+  p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
 
   @media (min-width: 768px) {
     .grid-container {
@@ -131,8 +137,11 @@ const Template_Page = () => {
   return (
     <Container>
       <div className="header">
-        <h1>NON TECHNICAL</h1>
+        <h1>Choose from our templates</h1>
       </div>
+      <p className="pp">
+        Unlock Your Potential: Explore Our Stylish Resume Templates
+      </p>
       <div className="category-selector">
         <div className="select-container">
           <select
