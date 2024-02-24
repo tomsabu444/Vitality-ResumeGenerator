@@ -28,12 +28,11 @@ const Landing = () => {
         </div>
         {/* subtitle */}
         <p className="description">
-          Start now and create your perfect ✨resume✨ to achieve your career
-          goals!
+          Create your resume to build your dreams!
         </p>
         {/* custom button */}
         <Link to="/resume" className="link">
-          <StarsButton title={"Start now"} />
+          <StarsButton title={"Create resume"} />
         </Link>
       </div>
     </Container>
@@ -54,6 +53,7 @@ const Container = styled.div`
   }
   .header .title-container {
     color: #92a0b5;
+    z-index: 20;
   }
   .header .title-container .title {
     font-size: 5rem;
