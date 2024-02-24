@@ -72,22 +72,29 @@ const Container = styled.div`
     margin-top: 2rem;
   }
   @keyframes animation-home {
-    0% {
-      transform: translateY(-40px);
-    }
+    0%,
     100% {
-      transform: translateY(40px);
+      transform: translateY(0px);
+    }
+    20%,
+    80% {
+      transform: translateY(-10px);
+    }
+    40%,
+    60% {
+      transform: translateY(10px);
     }
   }
+
   .header .square {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: absolute;
-    animation: float 5s linear infinite;
     backdrop-filter: blur(5px);
     z-index: 0;
-    animation: animation-home 4s infinite;
+    animation: animation-home 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
   }
+
   .header .square.s1 {
     left: 20vw;
     top: 100px;
