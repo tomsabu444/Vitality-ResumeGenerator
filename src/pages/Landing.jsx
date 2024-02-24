@@ -29,7 +29,7 @@ const Landing = () => {
         {/* subtitle */}
         <p className="description">Create your resume to build your dreams!</p>
         {/* custom button */}
-        <Link to="/resume" className="link">
+        <Link to="/choose-template" className="link">
           <StarsButton title={"Create resume"} />
         </Link>
       </div>

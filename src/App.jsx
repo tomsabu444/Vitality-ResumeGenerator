@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 
 import Credits from "./pages/Credits"; // Correct import path
 import Landing from "./pages/Landing";
+import Template_Page from "./pages/Template_page";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/" element={<Landing />} />
 
           <Route exact path="/credits" element={<Credits />} />
+          <Route exact path="/choose-template" element={<Template_Page />} />
         </Routes>
       </BrowserRouter>
     </>
