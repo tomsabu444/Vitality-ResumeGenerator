@@ -11,7 +11,7 @@ function Template_Page() {
   return (
     <Container>
       <h1 className="main-h">Choose from our templates</h1>
-      <span>Unlock Your Potential: Explore Our Stylish Resume Templates</span>
+      <p>Unlock Your Potential: Explore Our Stylish Resume Templates</p>
       <ColorPickerContainer>
         <label htmlFor="colorPicker">COLOR:</label>
         <ColorOptionsContainer>
@@ -26,27 +26,81 @@ function Template_Page() {
             selected={selectedColor === "#000000"}
             backgroundColor="#000000"
           />
-          {/* Add more color options as needed */}
+          <ColorOption
+            onClick={() => handleColorChange("#FF0000")}
+            selected={selectedColor === "#FF0000"}
+            backgroundColor="#FF0000"
+          />
+          <ColorOption
+            onClick={() => handleColorChange("#00FF00")}
+            selected={selectedColor === "#00FF00"}
+            backgroundColor="#00FF00"
+          />
+          <ColorOption
+            onClick={() => handleColorChange("#0000FF")}
+            selected={selectedColor === "#0000FF"}
+            backgroundColor="#0000FF"
+          />
+          <ColorOption
+            onClick={() => handleColorChange("#FFFF00")}
+            selected={selectedColor === "#FFFF00"}
+            backgroundColor="#FFFF00"
+          />
+          <ColorOption
+            onClick={() => handleColorChange("#FF00FF")}
+            selected={selectedColor === "#FF00FF"}
+            backgroundColor="#FF00FF"
+          />
+          <ColorOption
+            onClick={() => handleColorChange("#00FFFF")}
+            selected={selectedColor === "#00FFFF"}
+            backgroundColor="#00FFFF"
+          />
         </ColorOptionsContainer>
       </ColorPickerContainer>
+      <section className="recommended">
+        <div className="line"></div>
+        <h2>RECOMMENDED</h2>
+        <div className="line"></div>
+      </section>
     </Container>
   );
 }
 
 export default Template_Page;
 
-const Container = styled.div``;
+const Container = styled.div`
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .recommended {
+    display: flex;
+    justify-content: center;
+  }
+  .line {
+    width: 400px;
+    height: 6px;
+    background-color: grey;
+    border-radius: 8px;
+    margin: auto 10px;
+  }
+`;
 
 const ColorPickerContainer = styled.div`
   margin-top: 20px;
   display: flex;
   align-items: center;
+  justify-content: center; /* Center horizontally */
 `;
 
 const ColorOptionsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: center; /* Center vertically */
 `;
 
 const ColorOption = styled.div`
@@ -73,7 +127,11 @@ const ColorOption = styled.div`
 const NoColorMarker = styled.div`
   width: 20px;
   height: 20px;
-  background-color: transparent;
-  border: 2px solid #d3d3d3; /* Grey border */
-  border-radius: 50%;
+  border: 3px solid black;
+  background-color: #5b5959;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
