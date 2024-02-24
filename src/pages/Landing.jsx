@@ -1,10 +1,25 @@
 // React
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import StarsButton from "../components/StartsButton";
 
 const Landing = () => {
+  const [showLandingPage, setShowLandingPage] = useState(true);
+
+  useEffect(() => {
+    // Check if the user has already visited the site
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    // If the user has visited, do not show the landing page
+    if (hasVisited) {
+      setShowLandingPage(false);
+    } else {
+      // If it's the first visit, set the flag in local storage
+      localStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
   return (
     <Container>
       <div className="header">
