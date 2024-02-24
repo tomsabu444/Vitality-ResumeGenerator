@@ -1,10 +1,20 @@
 // React
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import StarsButton from "../components/StartsButton";
+import ResumePopup from "../components/ResumePopup"; // Import the popup component
 
 const Landing = () => {
+  const [showPopup, setShowPopup] = useState(false); // State to manage the popup visibility
+
+  const handleCreateResume = () => {
+    setShowPopup(true); // Show the popup when "Create resume" button is clicked
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+  };
   
   return (
     <Container>
@@ -30,9 +40,11 @@ const Landing = () => {
         {/* subtitle */}
         <p className="description">Create your resume to build your dreams!</p>
         {/* custom button */}
-        <Link to="/resume" className="link">
+        <div className="link" onClick={handleCreateResume}>
           <StarsButton title={"Create resume"} />
-        </Link>
+        </div>
+          {/* Render the popup if showPopup state is true */}
+      {showPopup && <ResumePopup onClose={handleClosePopup} />}
       </div>
     </Container>
   );
@@ -53,6 +65,7 @@ const Container = styled.div`
   .header .title-container {
     color: #92a0b5;
     z-index: 20;
+    padding-bottom: 30px;
   }
   .header .title-container .title {
     font-size: 5rem;
