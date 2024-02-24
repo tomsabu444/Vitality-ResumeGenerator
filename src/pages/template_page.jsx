@@ -63,6 +63,12 @@ function Template_Page() {
         <h2>RECOMMENDED</h2>
         <div className="line"></div>
       </section>
+      <section className="template-rec"></section>
+      <section className="all">
+        <div className="line alll"></div>
+        <h2>ALL</h2>
+        <div className="line alll"></div>
+      </section>
     </Container>
   );
 }
@@ -77,6 +83,7 @@ const Container = styled.div`
     text-align: center;
   }
   .recommended {
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
   }
@@ -86,6 +93,16 @@ const Container = styled.div`
     background-color: grey;
     border-radius: 8px;
     margin: auto 10px;
+  }
+  .template-rec {
+    height: 60vh;
+  }
+  .all {
+    display: flex;
+    justify-content: center;
+  }
+  .alll {
+    width: 480px;
   }
 `;
 
