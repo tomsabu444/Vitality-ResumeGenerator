@@ -13,7 +13,7 @@ function Template_Page() {
       <h1 className="main-h">Choose from our templates</h1>
       <span>Unlock Your Potential: Explore Our Stylish Resume Templates</span>
       <ColorPickerContainer>
-        <label htmlFor="colorPicker">Select a Color: </label>
+        <label htmlFor="colorPicker">COLOR:</label>
         <ColorOptionsContainer>
           <ColorOption
             onClick={() => handleColorChange("")}
@@ -26,36 +26,7 @@ function Template_Page() {
             selected={selectedColor === "#000000"}
             backgroundColor="#000000"
           />
-          <ColorOption
-            onClick={() => handleColorChange("#FF0000")}
-            selected={selectedColor === "#FF0000"}
-            backgroundColor="#FF0000"
-          />
-          <ColorOption
-            onClick={() => handleColorChange("#00FF00")}
-            selected={selectedColor === "#00FF00"}
-            backgroundColor="#00FF00"
-          />
-          <ColorOption
-            onClick={() => handleColorChange("#0000FF")}
-            selected={selectedColor === "#0000FF"}
-            backgroundColor="#0000FF"
-          />
-          <ColorOption
-            onClick={() => handleColorChange("#FFFF00")}
-            selected={selectedColor === "#FFFF00"}
-            backgroundColor="#FFFF00"
-          />
-          <ColorOption
-            onClick={() => handleColorChange("#FF00FF")}
-            selected={selectedColor === "#FF00FF"}
-            backgroundColor="#FF00FF"
-          />
-          <ColorOption
-            onClick={() => handleColorChange("#00FFFF")}
-            selected={selectedColor === "#00FFFF"}
-            backgroundColor="#00FFFF"
-          />
+          {/* Add more color options as needed */}
         </ColorOptionsContainer>
       </ColorPickerContainer>
     </Container>
@@ -68,6 +39,8 @@ const Container = styled.div``;
 
 const ColorPickerContainer = styled.div`
   margin-top: 20px;
+  display: flex;
+  align-items: center;
 `;
 
 const ColorOptionsContainer = styled.div`
@@ -81,20 +54,26 @@ const ColorOption = styled.div`
   height: 30px;
   background-color: ${({ backgroundColor }) =>
     backgroundColor || "transparent"};
-  border: ${({ selected, backgroundColor }) =>
-    selected && !backgroundColor
-      ? "2px solid #FF0000"
-      : "2px solid transparent"};
+  border: 2px solid transparent; /* Initial transparent border */
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  /* Add black border when selected */
+  ${({ selected }) =>
+    selected &&
+    `
+    border-color: black;
+  `}
 `;
 
 const NoColorMarker = styled.div`
   width: 20px;
-  height: 2px;
-  background-color: #ff0000;
-  border-radius: 2px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #d3d3d3; /* Grey border */
+  border-radius: 50%;
 `;
