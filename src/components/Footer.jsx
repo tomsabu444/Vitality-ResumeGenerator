@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <Container>
       <footer>
         <span>
-          By <a href="https://www.instagram.com/">TOM</a> |
-          <span className="far fa-copyright"></span> 2021 All rights reserved.
+          Team <Link to="/credits">Vitality</Link> |
+          <span className="far fa-copyright"></span> 2024 All rights reserved.
         </span>
       </footer>
     </Container>
@@ -34,3 +35,4 @@ const Container = styled.div`
     text-decoration: underline;
   }
 `;
+
