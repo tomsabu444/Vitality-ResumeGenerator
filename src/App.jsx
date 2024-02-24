@@ -2,15 +2,16 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NavBar from "./components/Navbar";
+import Landing from "./pages/Landing";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <NavBar />
+
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Landing />} />
 
         </Routes>
       </BrowserRouter>
