@@ -1,51 +1,34 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
 
 function NavBar() {
   const [click, setClick] = useState(false);
 
-  // Define navigation items
-  const navItems = [{ path: "/", name: "Home" }];
-
   const handleClick = () => setClick(!click);
+
   return (
     <Container>
       <nav className="navbar">
         <div className="nav-container">
           <NavLink to="/" className="nav-logo">
-            <span>Vitality</span>
+            <span>
+              <h1>Vitality</h1>
+            </span>
           </NavLink>
-
-          <div className="nav-animation">
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              {navItems.map((item, index) => (
-                <li className="nav-item" key={index}>
-                  <NavLink
-                    to={item.path}
-                    activeclassname="active"
-                    className="nav-links"
-                    onClick={handleClick}
-                  >
-                    {item.name}
-                  </NavLink>
-                </li>
-              ))}
+          <div className="menu-icon" onClick={handleClick}>
+            {click ? <IoCloseOutline /> : <IoMenuOutline />}
+          </div>
+          {click && (
+            <ul className="nav-menu">
+              <li className="nav-item">
+                <NavLink to="/" className="nav-links" onClick={handleClick}>
+                  Home
+                </NavLink>
+              </li>
             </ul>
-          </div>
-          <div className="nav-icon" onClick={handleClick}>
-            {click ? (
-              <span className="icon icon-s">
-                <IoCloseOutline />
-              </span>
-            ) : (
-              <span className="icon icon-s">
-                <RxHamburgerMenu />
-              </span>
-            )}
-          </div>
+          )}
         </div>
       </nav>
     </Container>
@@ -55,171 +38,76 @@ function NavBar() {
 export default NavBar;
 
 const Container = styled.div`
-  .navbar {
-    background: #222;
-    width: 100vw;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: fixed;
-    top: 0;
-    z-index: 20;
-  }
-
-  a .logo {
+  nav {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.071);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    width: 100%;
+    position: absolute;
   }
 
   .nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 80px;
-    max-width: 1500px;
-    position: relative;
   }
 
-  .nav-logo {
-    color: #f5b921;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    flex-grow: 1;
-
-    display: flex;
-    align-items: center;
-    justify-items: center;
-  }
-
-  .nav-logo .icon {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    margin-left: 16px;
+  .menu-icon {
+    display: none; /* Hide the menu icon by default */
   }
 
   .nav-menu {
-    display: flex;
     list-style: none;
-    text-align: center;
-    margin-right: 2rem;
+    display: flex;
+  }
+
+  .nav-item {
+    margin-right: 20px;
   }
 
   .nav-links {
-    color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
-    border-bottom: 3px solid transparent;
-  }
-  /* .fa-code {
-  margin-left: 1rem;
-} */
-
-  .nav-item {
-    line-height: 40px;
-    margin-right: 1rem;
+    color: rgba(181, 153, 12, 0.962);
   }
 
-  .nav-item:after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width 0.7s ease, background-color 0.5s ease;
+  h1 {
+    color: rgba(181, 153, 12, 0.962);
+    font-size: 2.14rem;
   }
 
-  .nav-item .active {
-    background: linear-gradient(45deg, #524306, #ffdd40);
-    color: white;
-    font-weight: 600;
-    border-radius: 15px;
+  a {
+    text-decoration: none;
   }
 
-  .nav-icon {
-    display: none;
-    color: #fff;
-  }
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block; /* Display the menu icon when screen size is less than 768px */
+      cursor: pointer;
+    }
 
-  .nav-icon .icon {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-  }
-
-  @media screen and (max-width: 960px) {
     .nav-menu {
-      display: flex;
+      display: ${({ click }) =>
+        click ? "flex" : "none"}; /* Show the menu when click is true */
       flex-direction: column;
-      width: 100%;
-      border-top: 1pxsolid #fff;
       position: absolute;
       top: 80px;
-      left: -110%;
-      opacity: 1;
-      transition: all 0.5s ease;
-    }
-    .nav-menu {
-      color: white;
-      font-weight: 600;
-    }
-    .nav-animation ul {
-      background-color: #1919228f;
-    }
-    .nav-item .active {
-      background: transparent;
-      border-radius: 0;
-    }
-    .nav-menu.active {
-      background: #222;
-      left: 0px;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-    .nav-item .active {
-      color: #ffffff;
-      border: none;
-    }
-    .nav-item:hover {
-      color: red;
-    }
-    .nav-links {
+      left: 0;
       width: 100%;
-      display: table;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-logo .icon {
-      width: 2rem;
-      height: 2rem;
-    }
-
-    .nav-icon {
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translate(-100%, -50%);
-      width: 2rem;
-      height: 2rem;
-      cursor: pointer;
-      color: #ffdd40;
-    }
-
-    .hamburgeropen {
-      width: 20px;
-      height: 30px;
-    }
-    .nav-item .active {
-      color: #ffdd40;
-    }
-    .icon-s {
-      font-size: 2.1rem;
+    .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
     }
   }
 `;
