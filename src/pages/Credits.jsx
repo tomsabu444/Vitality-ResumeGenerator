@@ -5,6 +5,9 @@ import styled from "styled-components";
 import Jishnu_image from "../images/jishnu.jpeg";
 import Tom_image from "../images/tomsabu.jpg";
 import Jot_image from "../images/justin.jpg";
+
+
+import Layout from "../components/Layout";
 const Credits = () => {
   const teamMembers = [
     {
@@ -34,40 +37,42 @@ const Credits = () => {
   ];
 
   return (
-    <Container>
-      <div className="con">
-        <h2>Team Vitality</h2>
-        <p>Meet the amazing team behind this project</p>
-        <ul>
-          {teamMembers.map((member, index) => (
-            <Member key={index}>
-              <img src={member.image} alt={member.name} />
-              <div>
-                <strong>{member.name}</strong> <br /> {member.description}
-                <br />
-                <a
-                  href={member.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-github"></i>
-                </a>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href={`mailto:${member.email}`}>
-                  <i className="far fa-envelope"></i>
-                </a>
-              </div>
-            </Member>
-          ))}
-        </ul>
-      </div>
-    </Container>
+    <Layout>
+      <Container>
+        <div className="con">
+          <h2>Team Vitality</h2>
+          <p>Meet the amazing team behind this project</p>
+          <ul>
+            {teamMembers.map((member, index) => (
+              <Member key={index}>
+                <img src={member.image} alt={member.name} />
+                <div>
+                  <strong>{member.name}</strong> <br /> {member.description}
+                  <br />
+                  <a
+                    href={member.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a href={`mailto:${member.email}`}>
+                    <i className="far fa-envelope"></i>
+                  </a>
+                </div>
+              </Member>
+            ))}
+          </ul>
+        </div>
+      </Container>
+    </Layout>
   );
 };
 
