@@ -27,9 +27,7 @@ const Landing = () => {
           <div className="keyboard"></div>
         </div>
         {/* subtitle */}
-        <p className="description">
-          Create your resume to build your dreams!
-        </p>
+        <p className="description">Create your resume to build your dreams!</p>
         {/* custom button */}
         <Link to="/resume" className="link">
           <StarsButton title={"Create resume"} />
@@ -73,6 +71,14 @@ const Container = styled.div`
   .header .link {
     margin-top: 2rem;
   }
+  @keyframes animation-home {
+    0% {
+      transform: translateY(-40px);
+    }
+    100% {
+      transform: translateY(40px);
+    }
+  }
   .header .square {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -80,6 +86,7 @@ const Container = styled.div`
     animation: float 5s linear infinite;
     backdrop-filter: blur(5px);
     z-index: 0;
+    animation: animation-home 4s infinite;
   }
   .header .square.s1 {
     left: 20vw;
