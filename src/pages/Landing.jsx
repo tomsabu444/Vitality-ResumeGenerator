@@ -40,7 +40,9 @@ const Landing = () => {
         {/* subtitle */}
         <p className="description">Create your resume to build your dreams!</p>
         {/* custom button */}
+
         <div className="link" onClick={handleCreateResume}>
+
           <StarsButton title={"Create resume"} />
         </div>
           {/* Render the popup if showPopup state is true */}
