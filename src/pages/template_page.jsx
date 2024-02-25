@@ -98,7 +98,7 @@ const Container = styled.div`
   }
 `;
 
-const MainComponent = () => {
+const Template_page = () => {
   const nav = useNavigate();
   const imageUrls = [
     "https://media.discordapp.net/attachments/1207033542677372928/1211026083026178181/pikachu.jpg?ex=65ecb2ed&is=65da3ded&hm=9e52568c418b6e733bbbda9fa81bf8d7dbee06b2e088eda6cb7153eaef077e74&=&format=webp&width=496&height=701",
@@ -131,13 +131,20 @@ const MainComponent = () => {
   }, []);
 
   const handleChangeCategory = (category) => {
-    // Logic to filter events based on selected category
-    // Example:
-    // if (category === "All") {
-    //   setCurEvents([...]); // Set all events
-    // } else {
-    //   setCurEvents([...]); // Set events filtered by category
-    // }
+    let filteredImages = [];
+    if (category === "All") {
+      filteredImages = imageUrls;
+    } else if (category === "Recomended") {
+      filteredImages = [
+        imageUrls[10], // Index 10
+        imageUrls[11], // Index 11
+        imageUrls[8], // Index 8
+        imageUrls[9], // Index 9
+      ];
+    } else if (category === "Professional") {
+      // Add logic for filtering professional images
+    }
+    setCurEvents(filteredImages);
   };
 
   return (
@@ -178,4 +185,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default Template_page;
