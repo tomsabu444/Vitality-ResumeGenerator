@@ -107,7 +107,7 @@ function previewImage(){
 
                   <div className="cols-3">
                     <div className="form-elem">
-                      <label HtmlFor="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Your Image
                       </label>
                       <input
@@ -120,7 +120,7 @@ function previewImage(){
                       />
                     </div>
                     <div className="form-elem">
-                      <label HtmlFor="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Designation
                       </label>
                       <input
