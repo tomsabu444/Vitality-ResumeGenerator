@@ -1,53 +1,54 @@
 import React, { useState } from "react";
-// import "./UserDetailsForm.css"
 import styled from "styled-components";
 
+import Template01 from "./Template01";
+
 function UserDetailsForm() {
-  // generate CV
+  const [userData, setUserData] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   const generateCV = () => {
-    let userData = getUserInputs();
-    displayCV(userData);
-    console.log(userData);
+    const formData = new FormData(document.getElementById("cv-form"));
+    let data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    setUserData(data);
   };
 
+ 
 
-  // print CV
-function printCV(){
-  window.print();
-}
-
-// previewImage
-function previewImage(){
-  let oFReader = new FileReader();
-  oFReader.readAsDataURL(imageElem.files[0]);
-  oFReader.onload = function(ofEvent){
+  // previewImage
+  function previewImage() {
+    let oFReader = new FileReader();
+    oFReader.readAsDataURL(imageElem.files[0]);
+    oFReader.onload = function (ofEvent) {
       imageDsp.src = ofEvent.target.result;
+    };
   }
-}
 
-
-
-  const [achievements, setAchievements] = useState([{ title: '', description: '' }]);
-
-  // Function to add a new achievement
-  const addAchievement = () => {
-    setAchievements([...achievements, { title: '', description: '' }]);
+  const handleAddRow = (event) => {
+    const repeaterContainer = event.target.parentElement.querySelector(
+      "[data-repeater-list]"
+    );
+    const repeaterItem = repeaterContainer.querySelector(
+      "[data-repeater-item]"
+    );
+    const clone = repeaterItem.cloneNode(true);
+    repeaterContainer.appendChild(clone);
   };
 
-  // Function to remove an achievement
-  const removeAchievement = (index) => {
-    const updatedAchievements = [...achievements];
-    updatedAchievements.splice(index, 1);
-    setAchievements(updatedAchievements);
+  const handleRemoveRow = (event) => {
+    const repeaterItem = event.target.closest("[data-repeater-item]");
+    const repeaterContainer = repeaterItem.parentElement;
+    if (repeaterContainer.children.length > 1) {
+      repeaterContainer.removeChild(repeaterItem);
+    }
   };
-
-  // Function to handle changes in achievement inputs
-  const handleAchievementChange = (index, field, value) => {
-    const updatedAchievements = [...achievements];
-    updatedAchievements[index][field] = value;
-    setAchievements(updatedAchievements);
-  };
-
 
   return (
     <Container>
@@ -236,9 +237,10 @@ function previewImage(){
                           </div>
                         </div>
                         <button
-                          data-repeater-delete
                           type="button"
+                          data-repeater-delete
                           className="repeater-remove-btn"
+                          onClick={handleRemoveRow}
                         >
                           -
                         </button>
@@ -250,6 +252,7 @@ function previewImage(){
                     data-repeater-create
                     value="Add"
                     className="repeater-add-btn"
+                    onClick={handleAddRow}
                   >
                     +
                   </button>
@@ -350,9 +353,10 @@ function previewImage(){
                         </div>
 
                         <button
-                          data-repeater-delete
                           type="button"
+                          data-repeater-delete
                           className="repeater-remove-btn"
+                          onClick={handleRemoveRow}
                         >
                           -
                         </button>
@@ -364,6 +368,7 @@ function previewImage(){
                     data-repeater-create
                     value="Add"
                     className="repeater-add-btn"
+                    onClick={handleAddRow}
                   >
                     +
                   </button>
@@ -464,9 +469,10 @@ function previewImage(){
                         </div>
 
                         <button
-                          data-repeater-delete
                           type="button"
+                          data-repeater-delete
                           className="repeater-remove-btn"
+                          onClick={handleRemoveRow}
                         >
                           -
                         </button>
@@ -478,6 +484,7 @@ function previewImage(){
                     data-repeater-create
                     value="Add"
                     className="repeater-add-btn"
+                    onClick={handleAddRow}
                   >
                     +
                   </button>
@@ -535,9 +542,10 @@ function previewImage(){
                           </div>
                         </div>
                         <button
-                          data-repeater-delete
                           type="button"
+                          data-repeater-delete
                           className="repeater-remove-btn"
+                          onClick={handleRemoveRow}
                         >
                           -
                         </button>
@@ -549,6 +557,7 @@ function previewImage(){
                     data-repeater-create
                     value="Add"
                     className="repeater-add-btn"
+                    onClick={handleAddRow}
                   >
                     +
                   </button>
@@ -579,9 +588,10 @@ function previewImage(){
                         </div>
 
                         <button
-                          data-repeater-delete
                           type="button"
+                          data-repeater-delete
                           className="repeater-remove-btn"
+                          onClick={handleRemoveRow}
                         >
                           -
                         </button>
@@ -593,6 +603,7 @@ function previewImage(){
                     data-repeater-create
                     value="Add"
                     className="repeater-add-btn"
+                    onClick={handleAddRow}
                   >
                     +
                   </button>
@@ -603,390 +614,293 @@ function previewImage(){
         </div>
       </section>
 
-      <section id="preview-sc" className="print_area">
-        <div className="container">
-          <div className="preview-cnt">
-            <div className="preview-cnt-l bg-green text-white">
-              <div className="preview-blk">
-                <div className="preview-image">
-                  <img src="" alt="" id="image_dsp" />
-                </div>
-                <div className="preview-item preview-item-name">
-                  <span
-                    className="preview-item-val fw-6"
-                    id="fullname_dsp"
-                  ></span>
-                </div>
-                <div className="preview-item">
-                  <span
-                    className="preview-item-val text-uppercase fw-6 ls-1"
-                    id="designation_dsp"
-                  ></span>
-                </div>
-              </div>
+      {/* Button to toggle the popup */}
+      <button type="button" onClick={togglePopup}>
+        Preview CV
+      </button>
 
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>about</h3>
-                </div>
-                <div className="preview-blk-list">
-                  <div className="preview-item">
-                    <span className="preview-item-val" id="phoneno_dsp"></span>
-                  </div>
-                  <div className="preview-item">
-                    <span className="preview-item-val" id="email_dsp"></span>
-                  </div>
-                  <div className="preview-item">
-                    <span className="preview-item-val" id="address_dsp"></span>
-                  </div>
-                  <div className="preview-item">
-                    <span className="preview-item-val" id="summary_dsp"></span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>skills</h3>
-                </div>
-                <div
-                  className="skills-items preview-blk-list"
-                  id="skills_dsp"
-                ></div>
-              </div>
-            </div>
-
-            <div className="preview-cnt-r bg-white">
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>Achievements</h3>
-                </div>
-                <div
-                  className="achievements-items preview-blk-list"
-                  id="achievements_dsp"
-                ></div>
-              </div>
-
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>educations</h3>
-                </div>
-                <div
-                  className="educations-items preview-blk-list"
-                  id="educations_dsp"
-                ></div>
-              </div>
-
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>experiences</h3>
-                </div>
-                <div
-                  className="experiences-items preview-blk-list"
-                  id="experiences_dsp"
-                ></div>
-              </div>
-
-              <div className="preview-blk">
-                <div className="preview-blk-title">
-                  <h3>projects</h3>
-                </div>
-                <div
-                  className="projects-items preview-blk-list"
-                  id="projects_dsp"
-                ></div>
-              </div>
-            </div>
+      {/* Popup to display the resume template */}
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-inner">
+            <button className="close-btn" onClick={togglePopup}>
+              Close
+            </button>
+            {/* Pass userData as props to the resume template */}
+            <Template01 userData={userData} />
           </div>
         </div>
-      </section>
-
-      <section className="print-btn-sc">
-        <div className="container">
-          <button
-            type="button"
-            className="print-btn btn btn-primary"
-            onClick={printCV}
-          >
-            Print CV
-          </button>
-        </div>
-      </section>
+      )}
     </Container>
   );
 }
 
 export default UserDetailsForm;
 
-
 const Container = styled.div`
-  
-
-/* bars button */
-.bars{
+  /* bars button */
+  .bars {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 16.5px;
     width: 25px;
-}
-.bars .bar{
+  }
+  .bars .bar {
     width: 100%;
     height: 2px;
     background-color: var(--clr-blue);
     transition: var(--transition);
-}
+  }
 
-.bars:hover .bar{
+  .bars:hover .bar {
     background-color: var(--clr-dark);
-}
+  }
 
-/* buttons */
-.btn{
+  /* buttons */
+  .btn {
     font-size: 14.5px;
     font-weight: 600;
     padding: 1.4rem 1.6rem;
     border-radius: 4px;
     display: inline-block;
-}
+  }
 
-.btn-primary{
+  .btn-primary {
     background-color: var(--clr-blue);
     color: var(--clr-white);
     border: 1px solid var(--clr-blue);
     transition: var(--transition);
-}
+  }
 
-.btn-primary:hover{
+  .btn-primary:hover {
     background-color: transparent;
     color: var(--clr-dark);
     border-color: var(--clr-grey);
-}
+  }
 
-.btn-secondary{
+  .btn-secondary {
     background-color: transparent;
     color: var(--clr-dark);
     border: 1px solid var(--clr-grey);
     transition: var(--transition);
-}
+  }
 
-.btn-secondary:hover{
+  .btn-secondary:hover {
     background-color: var(--clr-blue);
     color: var(--clr-white);
     border-color: var(--clr-blue);
-}
+  }
 
-.btn-group button:first-child, .btn-group a:first-child{
-    margin-right: 1rem!important;
-}
+  .btn-group button:first-child,
+  .btn-group a:first-child {
+    margin-right: 1rem !important;
+  }
 
-/* navbar part */
-.navbar{
+  /* navbar part */
+  .navbar {
     height: 80px;
     display: flex;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 3px 8px;
-}
+  }
 
-.navbar .container{
+  .navbar .container {
     width: 100%;
-}
+  }
 
-.navbar-brand{
+  .navbar-brand {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: 1.8rem;
-}
-.navbar-brand-text{
+  }
+  .navbar-brand-text {
     color: var(--clr-dark);
     font-weight: 600;
-}
-.navbar-brand-text span{
+  }
+  .navbar-brand-text span {
     color: var(--clr-blue);
-}
-.navbar-brand-icon{
+  }
+  .navbar-brand-icon {
     width: 25px;
     margin-right: 6px;
     opacity: 0.8;
-}
-.brand-and-toggler{
+  }
+  .brand-and-toggler {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.header{
+  }
+  .header {
     min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.header-content{
+  }
+  .header-content {
     max-width: 740px;
     margin-right: auto;
     margin-left: auto;
-}
-.header-content img{
+  }
+  .header-content img {
     max-width: 760px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     margin-top: 3.2rem;
-}
-.lg-title{
+  }
+  .lg-title {
     margin: 1.4rem 0;
     font-size: 37px;
     line-height: 1.4;
     color: var(--clr-dark);
-}
-.header-content p{
+  }
+  .header-content p {
     margin-bottom: 2.6rem;
     line-height: 1.6;
-}
+  }
 
-
-/* section one */
-.section-one{
+  /* section one */
+  .section-one {
     padding: 64px 0;
     min-height: 80vh;
     display: flex;
     align-items: center;
-}
-.section-one-l img{
+  }
+  .section-one-l img {
     max-width: 545px;
     margin-right: auto;
     margin-left: auto;
-}
-.section-one-r{
+  }
+  .section-one-r {
     margin-top: 4rem;
-}
+  }
 
-.section-one .btn-group{
+  .section-one .btn-group {
     margin-top: 2rem;
-}
-.section-one-r{
+  }
+  .section-one-r {
     max-width: 545px;
     margin-right: auto;
     margin-left: auto;
-}
-.section-one-r .btn-group{
+  }
+  .section-one-r .btn-group {
     margin-top: 3rem;
-}
+  }
 
-/* section two */
-.section-two{
+  /* section two */
+  .section-two {
     padding: 64px 0;
-}
-.section-two .section-items{
+  }
+  .section-two .section-items {
     display: grid;
     gap: 2rem;
-}
+  }
 
-.section-two .section-item{
+  .section-two .section-item {
     max-width: 350px;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-}
-.section-two .section-item-icon{
+  }
+  .section-two .section-item-icon {
     margin: 1rem 0;
-}
-.section-two .section-item-icon img{
+  }
+  .section-two .section-item-icon img {
     width: 80px;
     margin-right: auto;
     margin-left: auto;
-}
-.section-two .section-item-title{
+  }
+  .section-two .section-item-title {
     color: var(--clr-blue-dark);
     font-size: 1.8rem;
     font-weight: 600;
-}
-.section-two .text{
+  }
+  .section-two .text {
     margin: 0.9rem 0;
-}
+  }
 
-/* footer */
-.footer{
+  /* footer */
+  .footer {
     padding: 3rem 0;
-}
-.footer-content p{
+  }
+  .footer-content p {
     color: var(--clr-grey);
-}
-.footer-content p span{
+  }
+  .footer-content p span {
     color: var(--clr-white);
-}
+  }
 
-/* media queries */
-@media screen and (min-width: 768px){
-    .section-two .section-items{
-        grid-template-columns: repeat(2, 1fr);
+  /* media queries */
+  @media screen and (min-width: 768px) {
+    .section-two .section-items {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
+  }
 
-@media screen and (min-width: 992px){
-    .section-one-content{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 3rem;
+  @media screen and (min-width: 992px) {
+    .section-one-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
     }
-    .section-one-r{
-        text-align: left;
+    .section-one-r {
+      text-align: left;
     }
-    .section-two .section-items{
-        grid-template-columns: repeat(3, 1fr);
+    .section-two .section-items {
+      grid-template-columns: repeat(3, 1fr);
     }
-    .section-two .section-item{
-        text-align: left;
+    .section-two .section-item {
+      text-align: left;
     }
-    .section-two .section-item-icon img{
-        margin-left: 0;
+    .section-two .section-item-icon img {
+      margin-left: 0;
     }
-}
+  }
 
-
-
-/* resume page */
-#about-sc{
+  /* resume page */
+  #about-sc {
     padding: 64px 0;
-}
+  }
 
-.cv-form-row-title{
+  .cv-form-row-title {
     background-color: var(--clr-dark);
     padding: 0.8rem 1.6rem;
     margin-bottom: 2rem;
-}
+  }
 
-.cv-form-row-title h3{
+  .cv-form-row-title h3 {
     color: var(--clr-white);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 1.7rem;
-}
-.cv-form-blk{
+  }
+  .cv-form-blk {
     margin: 3rem 0;
-}
-.cv-form-row{
+  }
+  .cv-form-row {
     padding: 3rem 2rem 0 2rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
     margin-bottom: 1rem;
     position: relative;
-}
-textarea{
+  }
+  textarea {
     resize: none;
-}
-.form-elem{
+  }
+  .form-elem {
     margin-bottom: 3rem;
     position: relative;
-}
-.form-label{
+  }
+  .form-label {
     display: block;
     font-weight: 600;
     font-size: 14px;
     color: var(--clr-dark);
     margin-bottom: 0.5rem;
-}
-.form-control{
+  }
+  .form-control {
     border-radius: none;
     border: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 14px;
@@ -995,12 +909,12 @@ textarea{
     width: 100%;
     outline: 0;
     transition: var(--transition);
-}
+  }
 
-.form-control:focus{
+  .form-control:focus {
     border-color: rgba(0, 0, 0, 0.3);
-}
-.form-text{
+  }
+  .form-text {
     color: #ca0b00;
     font-size: 12px;
     position: absolute;
@@ -1008,19 +922,20 @@ textarea{
     top: calc(100% + 2px);
     left: 0;
     width: 100%;
-}
-.cols-3, .cols-2{
+  }
+  .cols-3,
+  .cols-2 {
     display: grid;
-}
-.repeater-add-btn{
+  }
+  .repeater-add-btn {
     width: 25px;
     height: 25px;
     background-color: var(--clr-blue-mid);
     font-size: 1.6rem;
     color: var(--clr-white);
     margin: 1rem 0;
-}
-.repeater-remove-btn{
+  }
+  .repeater-remove-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -1031,46 +946,46 @@ textarea{
     background-color: #ca0b00;
     color: var(--clr-white);
     font-size: 1.6rem;
-}
+  }
 
-/* preview section */
-.preview-cnt{
+  /* preview section */
+  .preview-cnt {
     border-radius: 5px;
     display: grid;
     grid-template-columns: 32% auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     overflow: hidden;
-}
+  }
 
-.preview-cnt-l{
+  .preview-cnt-l {
     padding: 3rem 3rem 2rem 3rem;
-}
-.preview-cnt-r{
+  }
+  .preview-cnt-r {
     padding: 3rem 3rem 3rem 4rem;
-}
-.preview-cnt-l .preview-blk:nth-child(1){
+  }
+  .preview-cnt-l .preview-blk:nth-child(1) {
     text-align: center;
-}
-.preview-image{
+  }
+  .preview-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: auto;
     margin-left: auto;
-}
-.preview-image img{
+  }
+  .preview-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.preview-item-name{
+  }
+  .preview-item-name {
     font-size: 2.4rem;
     font-weight: 600;
     margin: 1.8rem 0;
     position: relative;
-}
-.preview-item-name::after{
+  }
+  .preview-item-name::after {
     position: absolute;
     content: "";
     bottom: -10px;
@@ -1079,119 +994,120 @@ textarea{
     background-color: rgba(255, 255, 255, 0.5);
     left: 50%;
     transform: translateX(-50%);
-}
-.preview-blk{
+  }
+  .preview-blk {
     padding: 1rem 0;
     margin-bottom: 1rem;
-}
-.preview-blk-title h3{
+  }
+  .preview-blk-title h3 {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 0.5rem;
-}
-.preview-blk-title{
+  }
+  .preview-blk-title {
     margin-bottom: 1rem;
-}
-.preview-blk-list .preview-item{
+  }
+  .preview-blk-list .preview-item {
     font-size: 1.5rem;
     margin-bottom: 0.2rem;
     opacity: 0.95;
-}
-.preview-cnt-r .preview-blk-title{
+  }
+  .preview-cnt-r .preview-blk-title {
     color: var(--clr-dark);
-}
-.preview-cnt-r .preview-blk-list .preview-item{
+  }
+  .preview-cnt-r .preview-blk-list .preview-item {
     margin-top: 1.8rem;
-}
+  }
 
-.achievements-items.preview-blk-list .preview-item span:first-child,
-.educations-items.preview-blk-list .preview-item span:first-child,
-.experiences-items.preview-blk-list .preview-item span:first-child{
+  .achievements-items.preview-blk-list .preview-item span:first-child,
+  .educations-items.preview-blk-list .preview-item span:first-child,
+  .experiences-items.preview-blk-list .preview-item span:first-child {
     display: block;
     font-weight: 600;
     margin-bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.03);
-}
+  }
 
-.educations-items.preview-blk-list .preview-item span:nth-child(2),
-.experiences-items.preview-blk-list .preview-item span:nth-child(2){
+  .educations-items.preview-blk-list .preview-item span:nth-child(2),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(2) {
     font-weight: 600;
     margin-right: 1rem;
-}
+  }
 
-.educations-items.preview-blk-list .preview-item span:nth-child(3),
-.experiences-items.preview-blk-list .preview-item span:nth-child(3){
+  .educations-items.preview-blk-list .preview-item span:nth-child(3),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(3) {
     font-style: italic;
     margin-right: 1rem;
-}
+  }
 
-.educations-items.preview-blk-list .preview-item span:nth-child(4),
-.educations-items.preview-blk-list .preview-item span:nth-child(5),
-.experiences-items.preview-blk-list .preview-item span:nth-child(4),
-.experiences-items.preview-blk-list .preview-item span:nth-child(5){
+  .educations-items.preview-blk-list .preview-item span:nth-child(4),
+  .educations-items.preview-blk-list .preview-item span:nth-child(5),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(4),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(5) {
     margin-right: 1rem;
     background-color: var(--clr-green);
     color: var(--clr-white);
     padding: 0 1rem;
     border-radius: 0.6rem;
-}
+  }
 
-.educations-items.preview-blk-list .preview-item span:nth-child(6),
-.experiences-items.preview-blk-list .preview-item span:nth-child(6){
+  .educations-items.preview-blk-list .preview-item span:nth-child(6),
+  .experiences-items.preview-blk-list .preview-item span:nth-child(6) {
     font-size: 13.5px;
     display: block;
     opacity: 0.8;
     margin-top: 1rem;
-}
-.projects-items.preview-blk-list .preview-item span{
+  }
+  .projects-items.preview-blk-list .preview-item span {
     display: block;
-}
+  }
 
-@media screen and (min-width: 768px){
-    .cols-3{
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 2rem;
+  @media screen and (min-width: 768px) {
+    .cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
     }
-    .cols-2{
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
+    .cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
     }
-}
+  }
 
-@media screen and (min-width: 992px){
-    .cv-form-row{
-        padding: 3rem 3rem 0rem 3rem;
+  @media screen and (min-width: 992px) {
+    .cv-form-row {
+      padding: 3rem 3rem 0rem 3rem;
     }
-    .cols-3{
-        grid-template-columns: repeat(3, 1fr);
+    .cols-3 {
+      grid-template-columns: repeat(3, 1fr);
     }
-}
+  }
 
-.print-btn-sc{
+  .print-btn-sc {
     margin: 2rem 0 6rem 0;
-}
+  }
 
-/* print section */
-@media print{
-    body *{
-        visibility: hidden;
+  /* print section */
+  @media print {
+    body * {
+      visibility: hidden;
     }
 
-    .non_print_area{
-        display: none;
+    .non_print_area {
+      display: none;
     }
 
-    .print_area, .print_area *{
-        visibility: visible;
+    .print_area,
+    .print_area * {
+      visibility: visible;
     }
 
-    .print_area{
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        overflow: hidden;
+    .print_area {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: hidden;
     }
-}
+  }
 `;
