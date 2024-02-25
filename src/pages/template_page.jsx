@@ -67,49 +67,48 @@ const Container = styled.div`
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin: 0 4px 12px;
-  }
-  p {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-  }
-
-  @media (min-width: 768px) {
-    .grid-container {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    margin-top: 20px;
   }
 
   .event-card {
     transition: all 0.2s;
     cursor: pointer;
     border-radius: 16px;
+    height: 400px; /* Adjust the height */
+    overflow: hidden;
 
     &:hover {
       transform: scale(1.1);
     }
 
     .card-content {
-      max-width: 100%;
+      width: 100%;
+      height: 100%;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
       img {
         width: 100%;
-        object-fit: cover;
-        height: 120px;
+        height: 100%;
+        object-fit: contain; /* Adjusted to contain */
       }
     }
   }
 `;
 
-const Template_Page = () => {
+const MainComponent = () => {
   const nav = useNavigate();
+  const imageUrls = [
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026083026178181/pikachu.jpg?ex=65ecb2ed&is=65da3ded&hm=9e52568c418b6e733bbbda9fa81bf8d7dbee06b2e088eda6cb7153eaef077e74&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026169378635788/ditto.jpg?ex=65ecb302&is=65da3e02&hm=1963a122caeb997098866c5ffdf59c35a4f64202a57daf98aeb9fcce8736b977&=&format=webp&width=413&height=583",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026083315589230/onyx.jpg?ex=65ecb2ee&is=65da3dee&hm=4c380488dfea5846562c792dff46904da10c0b71ce38a5bb8b71ccfb60c3c023&",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026083625832518/nosepass.jpg?ex=65ecb2ee&is=65da3dee&hm=bf45ba0f24d08fca222ba71c7cf5bef2bcd9348acac3f6b811238f7d69ae9df1&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026083970027631/leafish.jpg?ex=65ecb2ee&is=65da3dee&hm=fab23594681eda8bfe3e444e2d5294d06a97a62c3c0a398a88ccb6353d36f963&=&format=webp&width=496&height=701",
+    // Add more image URLs for each card as needed
+  ];
+
   const [search, setSearch] = useState("");
   const [curEvents, setCurEvents] = useState([]);
   const options = [
@@ -119,14 +118,11 @@ const Template_Page = () => {
   ];
 
   useEffect(() => {
-    // Example: Create an array of 10 placeholder events with image URLs
-    const placeholderEvents = Array.from({ length: 10 }, (_, index) => ({
-      id: index + 1,
-      imgurl: `assets/image${index + 1}.jpg`, // Assuming your images are in the "assets" folder
-    }));
-
-    setCurEvents(placeholderEvents);
+    // Fetch data or setCurEvents with your data
+    // Example:
+    // setCurEvents([...]); // Set the events fetched from your API or database
   }, []);
+
   const handleChangeCategory = (category) => {
     // Logic to filter events based on selected category
     // Example:
@@ -142,9 +138,6 @@ const Template_Page = () => {
       <div className="header">
         <h1>Choose from our templates</h1>
       </div>
-      <p className="pp">
-        Unlock Your Potential: Explore Our Stylish Resume Templates
-      </p>
       <div className="category-selector">
         <div className="select-container">
           <select
@@ -162,17 +155,14 @@ const Template_Page = () => {
         </div>
       </div>
       <div className="grid-container">
-        {curEvents.map((event, index) => (
+        {imageUrls.map((url, index) => (
           <div
             className="event-card"
-            onClick={() => nav(`/events/cultural/${event.id}`)}
+            onClick={() => nav(`/events/cultural/${index + 1}`)}
             key={index}
           >
             <div className="card-content">
-              <img
-                src={event.imgurl ? event.imgurl : "placeholder_image_url"}
-                alt={`${event.id}`}
-              />
+              <img src={url} alt={`card-image-${index}`} />
             </div>
           </div>
         ))}
@@ -181,4 +171,4 @@ const Template_Page = () => {
   );
 };
 
-export default Template_Page;
+export default MainComponent;
