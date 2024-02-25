@@ -616,7 +616,7 @@ function UserDetailsForm() {
         </section>
 
         {/* Button to toggle the popup */}
-        <button type="button" onClick={togglePopup}>
+        <button type="preview" onClick={togglePopup}>
           Preview CV
         </button>
 
@@ -640,6 +640,12 @@ function UserDetailsForm() {
 export default UserDetailsForm;
 
 const Container = styled.div`
+
+.preview{
+
+  margin-bottom: 40px;
+
+}
   /* bars button */
   .bars {
     display: flex;
