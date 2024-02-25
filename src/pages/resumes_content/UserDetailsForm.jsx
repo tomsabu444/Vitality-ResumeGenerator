@@ -1,55 +1,99 @@
 import React, { useState } from 'react';
 
-import styled from "styled-components";
+const ResumeForm = () => {
+  const [formData, setFormData] = useState({
+    education: '',
+    experience: '',
+    links: '',
+    languages: '',
+    personalDetails: '',
+    skills: ''
+  });
 
-const UserDetailsForm = () => {
-  const [education, setEducation] = useState('');
-  const [experience, setExperience] = useState('');
-  const [links, setLinks] = useState('');
-  const [languages, setLanguages] = useState('');
-  const [personalDetails, setPersonalDetails] = useState('');
-  const [skills, setSkills] = useState('');
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log({
-      education,
-      experience,
-      links,
-      languages,
-      personalDetails,
-      skills
+    // Here you can handle form submission, for example, sending data to backend or storing in state
+    console.log(formData);
+    // Reset form after submission
+    setFormData({
+      education: '',
+      experience: '',
+      links: '',
+      languages: '',
+      personalDetails: '',
+      skills: ''
     });
   };
 
   return (
     <div>
-      <h2>User Details</h2>
+      <h1>Resume Form</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="education">Education:</label>
-          <input type="text" id="education" value={education} onChange={(e) => setEducation(e.target.value)} />
+          <input
+            type="text"
+            id="education"
+            name="education"
+            value={formData.education}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="experience">Experience:</label>
-          <input type="text" id="experience" value={experience} onChange={(e) => setExperience(e.target.value)} />
+          <input
+            type="text"
+            id="experience"
+            name="experience"
+            value={formData.experience}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="links">Links:</label>
-          <input type="text" id="links" value={links} onChange={(e) => setLinks(e.target.value)} />
+          <input
+            type="text"
+            id="links"
+            name="links"
+            value={formData.links}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="languages">Languages:</label>
-          <input type="text" id="languages" value={languages} onChange={(e) => setLanguages(e.target.value)} />
+          <input
+            type="text"
+            id="languages"
+            name="languages"
+            value={formData.languages}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="personalDetails">Personal Details:</label>
-          <textarea id="personalDetails" value={personalDetails} onChange={(e) => setPersonalDetails(e.target.value)} />
+          <textarea
+            id="personalDetails"
+            name="personalDetails"
+            value={formData.personalDetails}
+            onChange={handleChange}
+          />
         </div>
         <div>
           <label htmlFor="skills">Skills:</label>
-          <input type="text" id="skills" value={skills} onChange={(e) => setSkills(e.target.value)} />
+          <textarea
+            id="skills"
+            name="skills"
+            value={formData.skills}
+            onChange={handleChange}
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -57,8 +101,10 @@ const UserDetailsForm = () => {
   );
 };
 
-export default UserDetailsForm;
+export default ResumeForm;
 
+
+import styled from "styled-components";
 
 const Container = styled.div`
 .user-details-form-container {
