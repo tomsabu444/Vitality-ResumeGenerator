@@ -17,7 +17,7 @@ const ResumePopup = ({ onClose }) => {
         </h3>
 
         <div className="buttonContainer">
-          <StyledLink to="/test">Create New Resume</StyledLink>
+          <StyledLink to="/choose-template">Create New Resume</StyledLink>
           <StyledLink to="/choose-template">Choose Template</StyledLink>
         </div>
       </div>

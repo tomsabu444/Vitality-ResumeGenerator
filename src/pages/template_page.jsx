@@ -172,7 +172,7 @@ const Template_page = () => {
         {imageUrls.map((url, index) => (
           <div
             className="event-card"
-            onClick={() => nav(`./resumes_content/resume.html`)}
+            onClick={() => nav(`/user-details`)}
             key={index}
           >
             <div className="card-content">
