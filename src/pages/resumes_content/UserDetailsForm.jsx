@@ -62,7 +62,7 @@ function previewImage(){
                 <div className="cv-form-row cv-form-row-about">
                   <div className="cols-3">
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         First Name
                       </label>
                       <input
@@ -70,13 +70,13 @@ function previewImage(){
                         type="text"
                         className="form-control firstname"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. John"
                       />
                       <span className="form-text"></span>
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Middle Name <span className="opt-text">(optional)</span>
                       </label>
                       <input
@@ -84,13 +84,13 @@ function previewImage(){
                         type="text"
                         className="form-control middlename"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. Herbert"
                       />
                       <span className="form-text"></span>
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Last Name
                       </label>
                       <input
@@ -98,7 +98,7 @@ function previewImage(){
                         type="text"
                         className="form-control lastname"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. Doe"
                       />
                       <span className="form-text"></span>
@@ -107,7 +107,7 @@ function previewImage(){
 
                   <div className="cols-3">
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label HtmlFor="" className="form-label">
                         Your Image
                       </label>
                       <input
@@ -116,11 +116,11 @@ function previewImage(){
                         className="form-control image"
                         id=""
                         accept="image/*"
-                        onchange={previewImage}
+                        onChange={previewImage}
                       />
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label HtmlFor="" className="form-label">
                         Designation
                       </label>
                       <input
@@ -128,13 +128,13 @@ function previewImage(){
                         type="text"
                         className="form-control designation"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. Sr.Accountants"
                       />
                       <span className="form-text"></span>
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Address
                       </label>
                       <input
@@ -142,7 +142,7 @@ function previewImage(){
                         type="text"
                         className="form-control address"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. Lake Street-23"
                       />
                       <span className="form-text"></span>
@@ -151,7 +151,7 @@ function previewImage(){
 
                   <div className="cols-3">
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Email
                       </label>
                       <input
@@ -159,13 +159,13 @@ function previewImage(){
                         type="text"
                         className="form-control email"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. johndoe@gmail.com"
                       />
                       <span className="form-text"></span>
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Phone No:
                       </label>
                       <input
@@ -173,13 +173,13 @@ function previewImage(){
                         type="text"
                         className="form-control phoneno"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. 456-768-798, 567.654.002"
                       />
                       <span className="form-text"></span>
                     </div>
                     <div className="form-elem">
-                      <label for="" className="form-label">
+                      <label htmlFor="" className="form-label">
                         Summary
                       </label>
                       <input
@@ -187,7 +187,7 @@ function previewImage(){
                         type="text"
                         className="form-control summary"
                         id=""
-                        onkeyup={generateCV}
+                        onKeyUp={generateCV}
                         placeholder="e.g. Doe"
                       />
                       <span className="form-text"></span>
@@ -207,7 +207,7 @@ function previewImage(){
                       <div className="cv-form-row cv-form-row-achievement">
                         <div className="cols-2">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Title
                             </label>
                             <input
@@ -215,13 +215,13 @@ function previewImage(){
                               type="text"
                               className="form-control achieve_title"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                               placeholder="e.g. johndoe@gmail.com"
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Description
                             </label>
                             <input
@@ -229,7 +229,7 @@ function previewImage(){
                               type="text"
                               className="form-control achieve_description"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                               placeholder="e.g. johndoe@gmail.com"
                             />
                             <span className="form-text"></span>
@@ -267,7 +267,7 @@ function previewImage(){
                       <div className="cv-form-row cv-form-row-experience">
                         <div className="cols-3">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Title
                             </label>
                             <input
@@ -275,12 +275,12 @@ function previewImage(){
                               type="text"
                               className="form-control exp_title"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Company / Organization
                             </label>
                             <input
@@ -288,12 +288,12 @@ function previewImage(){
                               type="text"
                               className="form-control exp_organization"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Location
                             </label>
                             <input
@@ -301,7 +301,7 @@ function previewImage(){
                               type="text"
                               className="form-control exp_location"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
@@ -309,7 +309,7 @@ function previewImage(){
 
                         <div className="cols-3">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Start Date
                             </label>
                             <input
@@ -317,12 +317,12 @@ function previewImage(){
                               type="date"
                               className="form-control exp_start_date"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               End Date
                             </label>
                             <input
@@ -330,12 +330,12 @@ function previewImage(){
                               type="date"
                               className="form-control exp_end_date"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Description
                             </label>
                             <input
@@ -343,7 +343,7 @@ function previewImage(){
                               type="text"
                               className="form-control exp_description"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
@@ -381,7 +381,7 @@ function previewImage(){
                       <div className="cv-form-row cv-form-row-experience">
                         <div className="cols-3">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               School
                             </label>
                             <input
@@ -389,12 +389,12 @@ function previewImage(){
                               type="text"
                               className="form-control edu_school"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Degree
                             </label>
                             <input
@@ -402,12 +402,12 @@ function previewImage(){
                               type="text"
                               className="form-control edu_degree"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               City
                             </label>
                             <input
@@ -415,7 +415,7 @@ function previewImage(){
                               type="text"
                               className="form-control edu_city"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
@@ -423,7 +423,7 @@ function previewImage(){
 
                         <div className="cols-3">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Start Date
                             </label>
                             <input
@@ -431,12 +431,12 @@ function previewImage(){
                               type="date"
                               className="form-control edu_start_date"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               End Date
                             </label>
                             <input
@@ -444,12 +444,12 @@ function previewImage(){
                               type="date"
                               className="form-control edu_graduation_date"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Description
                             </label>
                             <input
@@ -457,7 +457,7 @@ function previewImage(){
                               type="text"
                               className="form-control edu_description"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
@@ -495,7 +495,7 @@ function previewImage(){
                       <div className="cv-form-row cv-form-row-experience">
                         <div className="cols-3">
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Project Name
                             </label>
                             <input
@@ -503,12 +503,12 @@ function previewImage(){
                               type="text"
                               className="form-control proj_title"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Project link
                             </label>
                             <input
@@ -516,12 +516,12 @@ function previewImage(){
                               type="text"
                               className="form-control proj_link"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
                           <div className="form-elem">
-                            <label for="" className="form-label">
+                            <label htmlFor="" className="form-label">
                               Description
                             </label>
                             <input
@@ -529,7 +529,7 @@ function previewImage(){
                               type="text"
                               className="form-control proj_description"
                               id=""
-                              onkeyup={generateCV}
+                              onKeyUp={generateCV}
                             />
                             <span className="form-text"></span>
                           </div>
@@ -565,7 +565,7 @@ function previewImage(){
                     <div data-repeater-item>
                       <div className="cv-form-row cv-form-row-skills">
                         <div className="form-elem">
-                          <label for="" className="form-label">
+                          <label htmlFor="" className="form-label">
                             Skill
                           </label>
                           <input
@@ -573,7 +573,7 @@ function previewImage(){
                             type="text"
                             className="form-control skill"
                             id=""
-                            onkeyup={generateCV}
+                            onKeyUp={generateCV}
                           />
                           <span className="form-text"></span>
                         </div>
@@ -706,7 +706,7 @@ function previewImage(){
           <button
             type="button"
             className="print-btn btn btn-primary"
-            onclick={printCV}
+            onClick={printCV}
           >
             Print CV
           </button>
