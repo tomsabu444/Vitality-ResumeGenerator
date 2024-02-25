@@ -20,14 +20,14 @@ export default Footer;
 const Container = styled.div`
   /* footer section styling */
   footer {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     background: rgb(0, 0, 0);
     padding: 15px 23px;
     color: rgb(255, 255, 255);
     text-align: center;
     z-index: 20;
-    width:100vw;
+    width: 100vw;
   }
   footer span a {
     color: rgb(255, 238, 0);
@@ -37,4 +37,3 @@ const Container = styled.div`
     text-decoration: underline;
   }
 `;
-
