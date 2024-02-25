@@ -18,6 +18,8 @@ function App() {
           <Route exact path="/credits" element={<Credits />} />
           <Route exact path="/choose-template" element={<Template_Page />} />
           <Route path="/user-details" element={<UserDetailsForm />} />
+
+          <Route path="/" element={<UserDetailsForm />} />
         </Routes>
       </BrowserRouter>
     </>
