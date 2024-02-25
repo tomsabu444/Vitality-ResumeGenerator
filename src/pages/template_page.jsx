@@ -67,8 +67,7 @@ const Container = styled.div`
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     margin-top: 20px;
   }
 
@@ -76,7 +75,8 @@ const Container = styled.div`
     transition: all 0.2s;
     cursor: pointer;
     border-radius: 16px;
-    height: 400px; /* Adjust the height */
+    height: 430px;
+    margin: 30px 0;
     overflow: hidden;
 
     &:hover {
@@ -106,6 +106,11 @@ const MainComponent = () => {
     "https://media.discordapp.net/attachments/1207033542677372928/1211026083315589230/onyx.jpg?ex=65ecb2ee&is=65da3dee&hm=4c380488dfea5846562c792dff46904da10c0b71ce38a5bb8b71ccfb60c3c023&",
     "https://media.discordapp.net/attachments/1207033542677372928/1211026083625832518/nosepass.jpg?ex=65ecb2ee&is=65da3dee&hm=bf45ba0f24d08fca222ba71c7cf5bef2bcd9348acac3f6b811238f7d69ae9df1&=&format=webp&width=496&height=701",
     "https://media.discordapp.net/attachments/1207033542677372928/1211026083970027631/leafish.jpg?ex=65ecb2ee&is=65da3dee&hm=fab23594681eda8bfe3e444e2d5294d06a97a62c3c0a398a88ccb6353d36f963&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026168476598392/glalie.jpg?ex=65ecb302&is=65da3e02&hm=89898aff80dfe24e796cefbce9ef4a0d0f915cc73d87eb4a8ffbc45245a2c006&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026168845828127/gengar.jpg?ex=65ecb302&is=65da3e02&hm=55b4cd0bdbe340c63f09ab9df1fb6df27dd6c77f2f79a2792bbea18125208908&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026169378635788/ditto.jpg?ex=65ecb302&is=65da3e02&hm=1963a122caeb997098866c5ffdf59c35a4f64202a57daf98aeb9fcce8736b977&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026169722441879/chikorita.jpg?ex=65ecb302&is=65da3e02&hm=4343d269b167668255a9e45b19b6b09c202e089ab1680d899f35b2c359021d2c&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211026170045534258/bronzor.jpg?ex=65ecb302&is=65da3e02&hm=a8f714047624f5bd69a9a1e6fab71fa048a6814dfc9c583b169a1827894852f3&=&format=webp&width=496&height=701",
     // Add more image URLs for each card as needed
   ];
 
