@@ -111,6 +111,8 @@ const MainComponent = () => {
     "https://media.discordapp.net/attachments/1207033542677372928/1211026169378635788/ditto.jpg?ex=65ecb302&is=65da3e02&hm=1963a122caeb997098866c5ffdf59c35a4f64202a57daf98aeb9fcce8736b977&=&format=webp&width=496&height=701",
     "https://media.discordapp.net/attachments/1207033542677372928/1211026169722441879/chikorita.jpg?ex=65ecb302&is=65da3e02&hm=4343d269b167668255a9e45b19b6b09c202e089ab1680d899f35b2c359021d2c&=&format=webp&width=496&height=701",
     "https://media.discordapp.net/attachments/1207033542677372928/1211026170045534258/bronzor.jpg?ex=65ecb302&is=65da3e02&hm=a8f714047624f5bd69a9a1e6fab71fa048a6814dfc9c583b169a1827894852f3&=&format=webp&width=496&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211205163554181191/canva-minimalist-white-and-grey-professional-resume-osicIupI94A.png?ex=65ed59b6&is=65dae4b6&hm=90d365e10397cda6b26640348dc6c5b89134a40dbe5288f1a2b9bcc3bb74a0c6&=&format=webp&quality=lossless&width=495&height=701",
+    "https://media.discordapp.net/attachments/1207033542677372928/1211205708167643176/no-experience-resume-sample.png?ex=65ed5a37&is=65dae537&hm=3c2bca207ce8f62af04fc7168c39cbd6f952e2978ca329c77d7644a70080d197&=&format=webp&quality=lossless&width=495&height=700",
     // Add more image URLs for each card as needed
   ];
 
