@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 
 import Credits from "./pages/Credits"; // Correct import path
 import Landing from "./pages/Landing";
-import Template_Page from "./pages/Template_page";
+import Template_Page from "./pages/template_page";
 
 function App() {
   return (
