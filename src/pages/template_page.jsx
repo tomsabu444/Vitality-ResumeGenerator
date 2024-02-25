@@ -119,11 +119,14 @@ const Template_Page = () => {
   ];
 
   useEffect(() => {
-    // Fetch data or setCurEvents with your data
-    // Example:
-    // setCurEvents([...]); // Set the events fetched from your API or database
-  }, []);
+    // Example: Create an array of 10 placeholder events with image URLs
+    const placeholderEvents = Array.from({ length: 10 }, (_, index) => ({
+      id: index + 1,
+      imgurl: `assets/image${index + 1}.jpg`, // Assuming your images are in the "assets" folder
+    }));
 
+    setCurEvents(placeholderEvents);
+  }, []);
   const handleChangeCategory = (category) => {
     // Logic to filter events based on selected category
     // Example:
