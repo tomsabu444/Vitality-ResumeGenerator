@@ -2,9 +2,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Jishnu_image from "../images/jishnu.jpeg";
-import Tom_image from "../images/tomsabu.jpg";
-import Jot_image from "../images/justin.jpg";
+import Jishnu_image from "../images/Credits_photos/jishnu.jpeg";
+import Tom_image from "../images/Credits_photos/tomsabu.jpg";
+import Jot_image from "../images/Credits_photos/justin.jpg";
 
 
 import Layout from "../components/Layout";
