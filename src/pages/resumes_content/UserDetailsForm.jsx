@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import Template01 from "./Template01";
+import Layout from "../../components/Layout";
 
 function UserDetailsForm() {
   const [userData, setUserData] = useState({});
@@ -19,8 +20,6 @@ function UserDetailsForm() {
     });
     setUserData(data);
   };
-
- 
 
   // previewImage
   function previewImage() {
@@ -51,587 +50,590 @@ function UserDetailsForm() {
   };
 
   return (
-    <Container>
-      <section id="about-sc" className="">
-        <div className="container">
-          <div className="about-cnt">
-            <form action="" className="cv-form" id="cv-form">
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>about section</h3>
-                </div>
-                <div className="cv-form-row cv-form-row-about">
-                  <div className="cols-3">
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        First Name
-                      </label>
-                      <input
-                        name="firstname"
-                        type="text"
-                        className="form-control firstname"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. John"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Middle Name <span className="opt-text">(optional)</span>
-                      </label>
-                      <input
-                        name="middlename"
-                        type="text"
-                        className="form-control middlename"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. Herbert"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Last Name
-                      </label>
-                      <input
-                        name="lastname"
-                        type="text"
-                        className="form-control lastname"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. Doe"
-                      />
-                      <span className="form-text"></span>
-                    </div>
+    <Layout>
+      <Container>
+        <section id="about-sc" className="">
+          <div className="container">
+            <div className="about-cnt">
+              <form action="" className="cv-form" id="cv-form">
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>about section</h3>
                   </div>
+                  <div className="cv-form-row cv-form-row-about">
+                    <div className="cols-3">
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          First Name
+                        </label>
+                        <input
+                          name="firstname"
+                          type="text"
+                          className="form-control firstname"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. John"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Middle Name{" "}
+                          <span className="opt-text">(optional)</span>
+                        </label>
+                        <input
+                          name="middlename"
+                          type="text"
+                          className="form-control middlename"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. Herbert"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Last Name
+                        </label>
+                        <input
+                          name="lastname"
+                          type="text"
+                          className="form-control lastname"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. Doe"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                    </div>
 
-                  <div className="cols-3">
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Your Image
-                      </label>
-                      <input
-                        name="image"
-                        type="file"
-                        className="form-control image"
-                        id=""
-                        accept="image/*"
-                        onChange={previewImage}
-                      />
+                    <div className="cols-3">
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Your Image
+                        </label>
+                        <input
+                          name="image"
+                          type="file"
+                          className="form-control image"
+                          id=""
+                          accept="image/*"
+                          onChange={previewImage}
+                        />
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Designation
+                        </label>
+                        <input
+                          name="designation"
+                          type="text"
+                          className="form-control designation"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. Sr.Accountants"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Address
+                        </label>
+                        <input
+                          name="address"
+                          type="text"
+                          className="form-control address"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. Lake Street-23"
+                        />
+                        <span className="form-text"></span>
+                      </div>
                     </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Designation
-                      </label>
-                      <input
-                        name="designation"
-                        type="text"
-                        className="form-control designation"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. Sr.Accountants"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Address
-                      </label>
-                      <input
-                        name="address"
-                        type="text"
-                        className="form-control address"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. Lake Street-23"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                  </div>
 
-                  <div className="cols-3">
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Email
-                      </label>
-                      <input
-                        name="email"
-                        type="text"
-                        className="form-control email"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. johndoe@gmail.com"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Phone No:
-                      </label>
-                      <input
-                        name="phoneno"
-                        type="text"
-                        className="form-control phoneno"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. 456-768-798, 567.654.002"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                    <div className="form-elem">
-                      <label htmlFor="" className="form-label">
-                        Summary
-                      </label>
-                      <input
-                        name="summary"
-                        type="text"
-                        className="form-control summary"
-                        id=""
-                        onKeyUp={generateCV}
-                        placeholder="e.g. Doe"
-                      />
-                      <span className="form-text"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>achievements</h3>
-                </div>
-
-                <div className="row-separator repeater">
-                  <div className="repeater" data-repeater-list="group-a">
-                    <div data-repeater-item>
-                      <div className="cv-form-row cv-form-row-achievement">
-                        <div className="cols-2">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Title
-                            </label>
-                            <input
-                              name="achieve_title"
-                              type="text"
-                              className="form-control achieve_title"
-                              id=""
-                              onKeyUp={generateCV}
-                              placeholder="e.g. johndoe@gmail.com"
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Description
-                            </label>
-                            <input
-                              name="achieve_description"
-                              type="text"
-                              className="form-control achieve_description"
-                              id=""
-                              onKeyUp={generateCV}
-                              placeholder="e.g. johndoe@gmail.com"
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                        </div>
-                        <button
-                          type="button"
-                          data-repeater-delete
-                          className="repeater-remove-btn"
-                          onClick={handleRemoveRow}
-                        >
-                          -
-                        </button>
+                    <div className="cols-3">
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Email
+                        </label>
+                        <input
+                          name="email"
+                          type="text"
+                          className="form-control email"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. johndoe@gmail.com"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Phone No:
+                        </label>
+                        <input
+                          name="phoneno"
+                          type="text"
+                          className="form-control phoneno"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. 456-768-798, 567.654.002"
+                        />
+                        <span className="form-text"></span>
+                      </div>
+                      <div className="form-elem">
+                        <label htmlFor="" className="form-label">
+                          Summary
+                        </label>
+                        <input
+                          name="summary"
+                          type="text"
+                          className="form-control summary"
+                          id=""
+                          onKeyUp={generateCV}
+                          placeholder="e.g. Doe"
+                        />
+                        <span className="form-text"></span>
                       </div>
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    data-repeater-create
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={handleAddRow}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>experience</h3>
                 </div>
 
-                <div className="row-separator repeater">
-                  <div className="repeater" data-repeater-list="group-b">
-                    <div data-repeater-item>
-                      <div className="cv-form-row cv-form-row-experience">
-                        <div className="cols-3">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Title
-                            </label>
-                            <input
-                              name="exp_title"
-                              type="text"
-                              className="form-control exp_title"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Company / Organization
-                            </label>
-                            <input
-                              name="exp_organization"
-                              type="text"
-                              className="form-control exp_organization"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Location
-                            </label>
-                            <input
-                              name="exp_location"
-                              type="text"
-                              className="form-control exp_location"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                        </div>
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>achievements</h3>
+                  </div>
 
-                        <div className="cols-3">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Start Date
-                            </label>
-                            <input
-                              name="exp_start_date"
-                              type="date"
-                              className="form-control exp_start_date"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
+                  <div className="row-separator repeater">
+                    <div className="repeater" data-repeater-list="group-a">
+                      <div data-repeater-item>
+                        <div className="cv-form-row cv-form-row-achievement">
+                          <div className="cols-2">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Title
+                              </label>
+                              <input
+                                name="achieve_title"
+                                type="text"
+                                className="form-control achieve_title"
+                                id=""
+                                onKeyUp={generateCV}
+                                placeholder="e.g. johndoe@gmail.com"
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Description
+                              </label>
+                              <input
+                                name="achieve_description"
+                                type="text"
+                                className="form-control achieve_description"
+                                id=""
+                                onKeyUp={generateCV}
+                                placeholder="e.g. johndoe@gmail.com"
+                              />
+                              <span className="form-text"></span>
+                            </div>
                           </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              End Date
-                            </label>
-                            <input
-                              name="exp_end_date"
-                              type="date"
-                              className="form-control exp_end_date"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Description
-                            </label>
-                            <input
-                              name="exp_description"
-                              type="text"
-                              className="form-control exp_description"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
+                          <button
+                            type="button"
+                            data-repeater-delete
+                            className="repeater-remove-btn"
+                            onClick={handleRemoveRow}
+                          >
+                            -
+                          </button>
                         </div>
-
-                        <button
-                          type="button"
-                          data-repeater-delete
-                          className="repeater-remove-btn"
-                          onClick={handleRemoveRow}
-                        >
-                          -
-                        </button>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      data-repeater-create
+                      value="Add"
+                      className="repeater-add-btn"
+                      onClick={handleAddRow}
+                    >
+                      +
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    data-repeater-create
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={handleAddRow}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>education</h3>
                 </div>
 
-                <div className="row-separator repeater">
-                  <div className="repeater" data-repeater-list="group-c">
-                    <div data-repeater-item>
-                      <div className="cv-form-row cv-form-row-experience">
-                        <div className="cols-3">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              School
-                            </label>
-                            <input
-                              name="edu_school"
-                              type="text"
-                              className="form-control edu_school"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Degree
-                            </label>
-                            <input
-                              name="edu_degree"
-                              type="text"
-                              className="form-control edu_degree"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              City
-                            </label>
-                            <input
-                              name="edu_city"
-                              type="text"
-                              className="form-control edu_city"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                        </div>
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>experience</h3>
+                  </div>
 
-                        <div className="cols-3">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Start Date
-                            </label>
-                            <input
-                              name="edu_start_date"
-                              type="date"
-                              className="form-control edu_start_date"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
+                  <div className="row-separator repeater">
+                    <div className="repeater" data-repeater-list="group-b">
+                      <div data-repeater-item>
+                        <div className="cv-form-row cv-form-row-experience">
+                          <div className="cols-3">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Title
+                              </label>
+                              <input
+                                name="exp_title"
+                                type="text"
+                                className="form-control exp_title"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Company / Organization
+                              </label>
+                              <input
+                                name="exp_organization"
+                                type="text"
+                                className="form-control exp_organization"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Location
+                              </label>
+                              <input
+                                name="exp_location"
+                                type="text"
+                                className="form-control exp_location"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
                           </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              End Date
-                            </label>
-                            <input
-                              name="edu_graduation_date"
-                              type="date"
-                              className="form-control edu_graduation_date"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Description
-                            </label>
-                            <input
-                              name="edu_description"
-                              type="text"
-                              className="form-control edu_description"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
-                        </div>
 
-                        <button
-                          type="button"
-                          data-repeater-delete
-                          className="repeater-remove-btn"
-                          onClick={handleRemoveRow}
-                        >
-                          -
-                        </button>
+                          <div className="cols-3">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Start Date
+                              </label>
+                              <input
+                                name="exp_start_date"
+                                type="date"
+                                className="form-control exp_start_date"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                End Date
+                              </label>
+                              <input
+                                name="exp_end_date"
+                                type="date"
+                                className="form-control exp_end_date"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Description
+                              </label>
+                              <input
+                                name="exp_description"
+                                type="text"
+                                className="form-control exp_description"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                          </div>
+
+                          <button
+                            type="button"
+                            data-repeater-delete
+                            className="repeater-remove-btn"
+                            onClick={handleRemoveRow}
+                          >
+                            -
+                          </button>
+                        </div>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      data-repeater-create
+                      value="Add"
+                      className="repeater-add-btn"
+                      onClick={handleAddRow}
+                    >
+                      +
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    data-repeater-create
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={handleAddRow}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>projects</h3>
                 </div>
 
-                <div className="row-separator repeater">
-                  <div className="repeater" data-repeater-list="group-d">
-                    <div data-repeater-item>
-                      <div className="cv-form-row cv-form-row-experience">
-                        <div className="cols-3">
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Project Name
-                            </label>
-                            <input
-                              name="proj_title"
-                              type="text"
-                              className="form-control proj_title"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>education</h3>
+                  </div>
+
+                  <div className="row-separator repeater">
+                    <div className="repeater" data-repeater-list="group-c">
+                      <div data-repeater-item>
+                        <div className="cv-form-row cv-form-row-experience">
+                          <div className="cols-3">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                School
+                              </label>
+                              <input
+                                name="edu_school"
+                                type="text"
+                                className="form-control edu_school"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Degree
+                              </label>
+                              <input
+                                name="edu_degree"
+                                type="text"
+                                className="form-control edu_degree"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                City
+                              </label>
+                              <input
+                                name="edu_city"
+                                type="text"
+                                className="form-control edu_city"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
                           </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Project link
-                            </label>
-                            <input
-                              name="proj_link"
-                              type="text"
-                              className="form-control proj_link"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
+
+                          <div className="cols-3">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Start Date
+                              </label>
+                              <input
+                                name="edu_start_date"
+                                type="date"
+                                className="form-control edu_start_date"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                End Date
+                              </label>
+                              <input
+                                name="edu_graduation_date"
+                                type="date"
+                                className="form-control edu_graduation_date"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Description
+                              </label>
+                              <input
+                                name="edu_description"
+                                type="text"
+                                className="form-control edu_description"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
                           </div>
-                          <div className="form-elem">
-                            <label htmlFor="" className="form-label">
-                              Description
-                            </label>
-                            <input
-                              name="proj_description"
-                              type="text"
-                              className="form-control proj_description"
-                              id=""
-                              onKeyUp={generateCV}
-                            />
-                            <span className="form-text"></span>
-                          </div>
+
+                          <button
+                            type="button"
+                            data-repeater-delete
+                            className="repeater-remove-btn"
+                            onClick={handleRemoveRow}
+                          >
+                            -
+                          </button>
                         </div>
-                        <button
-                          type="button"
-                          data-repeater-delete
-                          className="repeater-remove-btn"
-                          onClick={handleRemoveRow}
-                        >
-                          -
-                        </button>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      data-repeater-create
+                      value="Add"
+                      className="repeater-add-btn"
+                      onClick={handleAddRow}
+                    >
+                      +
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    data-repeater-create
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={handleAddRow}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <div className="cv-form-blk">
-                <div className="cv-form-row-title">
-                  <h3>skills</h3>
                 </div>
 
-                <div className="row-separator repeater">
-                  <div className="repeater" data-repeater-list="group-e">
-                    <div data-repeater-item>
-                      <div className="cv-form-row cv-form-row-skills">
-                        <div className="form-elem">
-                          <label htmlFor="" className="form-label">
-                            Skill
-                          </label>
-                          <input
-                            name="skill"
-                            type="text"
-                            className="form-control skill"
-                            id=""
-                            onKeyUp={generateCV}
-                          />
-                          <span className="form-text"></span>
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>projects</h3>
+                  </div>
+
+                  <div className="row-separator repeater">
+                    <div className="repeater" data-repeater-list="group-d">
+                      <div data-repeater-item>
+                        <div className="cv-form-row cv-form-row-experience">
+                          <div className="cols-3">
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Project Name
+                              </label>
+                              <input
+                                name="proj_title"
+                                type="text"
+                                className="form-control proj_title"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Project link
+                              </label>
+                              <input
+                                name="proj_link"
+                                type="text"
+                                className="form-control proj_link"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                            <div className="form-elem">
+                              <label htmlFor="" className="form-label">
+                                Description
+                              </label>
+                              <input
+                                name="proj_description"
+                                type="text"
+                                className="form-control proj_description"
+                                id=""
+                                onKeyUp={generateCV}
+                              />
+                              <span className="form-text"></span>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            data-repeater-delete
+                            className="repeater-remove-btn"
+                            onClick={handleRemoveRow}
+                          >
+                            -
+                          </button>
                         </div>
-
-                        <button
-                          type="button"
-                          data-repeater-delete
-                          className="repeater-remove-btn"
-                          onClick={handleRemoveRow}
-                        >
-                          -
-                        </button>
                       </div>
                     </div>
+                    <button
+                      type="button"
+                      data-repeater-create
+                      value="Add"
+                      className="repeater-add-btn"
+                      onClick={handleAddRow}
+                    >
+                      +
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    data-repeater-create
-                    value="Add"
-                    className="repeater-add-btn"
-                    onClick={handleAddRow}
-                  >
-                    +
-                  </button>
                 </div>
-              </div>
-            </form>
+
+                <div className="cv-form-blk">
+                  <div className="cv-form-row-title">
+                    <h3>skills</h3>
+                  </div>
+
+                  <div className="row-separator repeater">
+                    <div className="repeater" data-repeater-list="group-e">
+                      <div data-repeater-item>
+                        <div className="cv-form-row cv-form-row-skills">
+                          <div className="form-elem">
+                            <label htmlFor="" className="form-label">
+                              Skill
+                            </label>
+                            <input
+                              name="skill"
+                              type="text"
+                              className="form-control skill"
+                              id=""
+                              onKeyUp={generateCV}
+                            />
+                            <span className="form-text"></span>
+                          </div>
+
+                          <button
+                            type="button"
+                            data-repeater-delete
+                            className="repeater-remove-btn"
+                            onClick={handleRemoveRow}
+                          >
+                            -
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      data-repeater-create
+                      value="Add"
+                      className="repeater-add-btn"
+                      onClick={handleAddRow}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Button to toggle the popup */}
-      <button type="button" onClick={togglePopup}>
-        Preview CV
-      </button>
+        {/* Button to toggle the popup */}
+        <button type="button" onClick={togglePopup}>
+          Preview CV
+        </button>
 
-      {/* Popup to display the resume template */}
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-inner">
-            <button className="close-btn" onClick={togglePopup}>
-              Close
-            </button>
-            {/* Pass userData as props to the resume template */}
-            <Template01 userData={userData} />
+        {/* Popup to display the resume template */}
+        {showPopup && (
+          <div className="popup">
+            <div className="popup-inner">
+              <button className="close-btn" onClick={togglePopup}>
+                Close
+              </button>
+              {/* Pass userData as props to the resume template */}
+              <Template01 userData={userData} />
+            </div>
           </div>
-        </div>
-      )}
-    </Container>
+        )}
+      </Container>
+    </Layout>
   );
 }
 
