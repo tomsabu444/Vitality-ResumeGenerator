@@ -101,18 +101,18 @@ const Container = styled.div`
 const Template_page = () => {
   const nav = useNavigate();
   const imageUrls = [
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026083026178181/pikachu.jpg?ex=65ecb2ed&is=65da3ded&hm=9e52568c418b6e733bbbda9fa81bf8d7dbee06b2e088eda6cb7153eaef077e74&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026169378635788/ditto.jpg?ex=65ecb302&is=65da3e02&hm=1963a122caeb997098866c5ffdf59c35a4f64202a57daf98aeb9fcce8736b977&=&format=webp&width=413&height=583",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026083315589230/onyx.jpg?ex=65ecb2ee&is=65da3dee&hm=4c380488dfea5846562c792dff46904da10c0b71ce38a5bb8b71ccfb60c3c023&",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026083625832518/nosepass.jpg?ex=65ecb2ee&is=65da3dee&hm=bf45ba0f24d08fca222ba71c7cf5bef2bcd9348acac3f6b811238f7d69ae9df1&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026083970027631/leafish.jpg?ex=65ecb2ee&is=65da3dee&hm=fab23594681eda8bfe3e444e2d5294d06a97a62c3c0a398a88ccb6353d36f963&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026168476598392/glalie.jpg?ex=65ecb302&is=65da3e02&hm=89898aff80dfe24e796cefbce9ef4a0d0f915cc73d87eb4a8ffbc45245a2c006&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026168845828127/gengar.jpg?ex=65ecb302&is=65da3e02&hm=55b4cd0bdbe340c63f09ab9df1fb6df27dd6c77f2f79a2792bbea18125208908&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026169378635788/ditto.jpg?ex=65ecb302&is=65da3e02&hm=1963a122caeb997098866c5ffdf59c35a4f64202a57daf98aeb9fcce8736b977&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026169722441879/chikorita.jpg?ex=65ecb302&is=65da3e02&hm=4343d269b167668255a9e45b19b6b09c202e089ab1680d899f35b2c359021d2c&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211026170045534258/bronzor.jpg?ex=65ecb302&is=65da3e02&hm=a8f714047624f5bd69a9a1e6fab71fa048a6814dfc9c583b169a1827894852f3&=&format=webp&width=496&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211205163554181191/canva-minimalist-white-and-grey-professional-resume-osicIupI94A.png?ex=65ed59b6&is=65dae4b6&hm=90d365e10397cda6b26640348dc6c5b89134a40dbe5288f1a2b9bcc3bb74a0c6&=&format=webp&quality=lossless&width=495&height=701",
-    "https://media.discordapp.net/attachments/1207033542677372928/1211205708167643176/no-experience-resume-sample.png?ex=65ed5a37&is=65dae537&hm=3c2bca207ce8f62af04fc7168c39cbd6f952e2978ca329c77d7644a70080d197&=&format=webp&quality=lossless&width=495&height=700",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544388631035956/azurill.jpg?ex=66169a30&is=66042530&hm=5da695226ee8609698c32ac946a28d3ecb6be2a524e8a48380bcc71f7ea67c83&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544389017042945/bronzor.jpg?ex=66169a30&is=66042530&hm=e45f16c0206a1b5b6d93de0c8de11bac1305944e6c520d6828fd080de57db928&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544389293736027/chikorita.jpg?ex=66169a30&is=66042530&hm=e4fcb1f3e44f47603e577c7efeef3c3c6efaf24e2ffdd7b3c8e8f37ea25d7785&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544389583147088/ditto.jpg?ex=66169a30&is=66042530&hm=1ddb75e976daed031adce6f54b931955a19fcf86d568f37ae62fdd5aedb7d7fb&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544389868486656/gengar.jpg?ex=66169a30&is=66042530&hm=be20bb9a2af396031e492c7f0d3a553ae407d650dc6c24488f01674783cae046&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544390195511437/glalie.jpg?ex=66169a30&is=66042530&hm=3e142ab25fefb9bdde1219b9229cfc84a9f52d8a3893268bdcab4788cebad0cf&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544390535254147/kakuna.jpg?ex=66169a30&is=66042530&hm=f045e52c48815416ff72c70db2dffb75500ae6df9f9a6af77c7afa5f1bcf675e&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544390971457608/leafish.jpg?ex=66169a30&is=66042530&hm=64c139288243c1064f27200b5ff816190205372df5a7450e44532d3ca5b64009&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544391286034482/nosepass.jpg?ex=66169a30&is=66042530&hm=ee1a27f3b067c7c267f21caa50dc9893acaadb03df87b8040e42adce7ea54104&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544457292058774/onyx.jpg?ex=66169a40&is=66042540&hm=de6c69ab66d6c8c49c17ae23ec4b4bb4a324c68f91a5e6329f2f7fe916075112&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544457870741605/pikachu.jpg?ex=66169a40&is=66042540&hm=3c988c390f6a42a819ec8beb4d9c790476ea287fce5ede52b5bece125a6451b0&",
+    "https://cdn.discordapp.com/attachments/1183273568184832102/1222544458269069493/rhyhorn.jpg?ex=66169a40&is=66042540&hm=9c16df521ed5011dd929373a6b458bf86de199a5185bb4468c26ba0b764a23ac&",
     // Add more image URLs for each card as needed
   ];
 
